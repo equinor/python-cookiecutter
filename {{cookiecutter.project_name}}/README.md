@@ -7,7 +7,7 @@
 {% endif -%}
 [![travis](https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg?label=travis)](https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }})
 [![readthedocs](https://readthedocs.org/projects/{{cookiecutter.distribution_name }}/badge/?version=latest)](https://{{cookiecutter.distribution_name }}.readthedocs.io/en/latest/?badge=latest)
-{%- endif -%}
+{%- endif %}
 
 {{ cookiecutter.short_description }}
 
