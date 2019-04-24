@@ -10,7 +10,7 @@
 
     "shortname": "name",
     "email": "{{ cookiecutter.shortname }}@equinor.com",
-    "github_username": "Equinor",
+    "github_username": "equinor",
 
     "project_name": "Nameless",
     "repo_name": "{{ cookiecutter.project_name | lower | replace(' ', '_') }}",
