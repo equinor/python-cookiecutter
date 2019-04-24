@@ -36,6 +36,7 @@ if __name__ == '__main__':
     travis = 'https://travis-ci.org/{}/{}/settings'.format(username, repo)
     print('\tSet up the travis job:')
     print('\t{}\n'.format(travis))
+    print('\tYou might need to sync travis with github')
 
     appveyor = 'https://ci.appveyor.com/projects/new'
     print('\tSet up the appveyor job:')
