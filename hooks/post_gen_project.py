@@ -20,6 +20,7 @@ if __name__ == '__main__':
     subprocess.check_call(['git', 'add', '--all'])
     subprocess.check_call(['git', 'commit', '-m', msg])
     subprocess.check_call(['git', 'remote', 'add', 'upstream', upstream])
+    print("Adding the remote 'upstream': {}".format(upstream))
 
     if 'Not open source' in '{{ cookiecutter.open_source_license }}':
        remove_file('LICENSE')
