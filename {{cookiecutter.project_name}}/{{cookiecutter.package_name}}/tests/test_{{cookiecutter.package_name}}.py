@@ -1,4 +1,4 @@
-import pytest
+import pytest  # noqa: F401
 {% if cookiecutter.command_line_interface != 'None' -%}
 from .. import cli
 
