@@ -20,11 +20,15 @@ if __name__ == '__main__':
     subprocess.check_call(['git', 'commit', '-m', msg])
     subprocess.check_call(['git', 'remote', 'add', 'upstream', upstream])
 
-    print('\nNext steps:')
-
     if 'Not open source' in '{{ cookiecutter.open_source_license }}':
        remove_file('LICENSE')
 
+    if '{{ cookiecutter.command_line_interface }}' == 'None':
+        pkg = '{{ cookiecutter.package_name }}'
+        remove_file(os.path.join(pkg, 'cli.py'))
+        remove_file(os.path.join(pkg, '__main__.py'))
+
+    print('\nNext steps:')
 
     travis = 'https://travis-ci.com'
     print('\tSet up the travis job:')
