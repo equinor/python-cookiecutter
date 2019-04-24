@@ -52,8 +52,8 @@ feature requests, and documentation.
 
 ## Examples ##
 
-### Hello world ###
+### Example 1 ###
 
 ```python3
-    print('Hello world')
+    pass
 ```
