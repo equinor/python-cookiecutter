@@ -1,0 +1,31 @@
+language: python
+dist: xenial
+matrix:
+  include:
+{%- for env in ['py34', 'py35', 'py36', 'py37'] %}{{ '' }}
+    - python: '{{ "{0[2]}.{0[3]}".format(env) }}'
+{%- endfor %}
+
+before_install:
+  - python3 --version
+
+install:
+  - python3 -m pip install --upgrade pip
+  - python3 -m pip install --upgrade -r requirements-dev.txt
+{%- if cookiecutter.linter != 'None' %}
+  - python3 -m {{ cookiecutter.linter }} {{ cookiecutter.package_name }}
+{%- endif %}
+
+script:
+  - python3 setup.py test
+
+{% if cookiecutter.pypi == 'yes' -%}
+deploy:
+  - provider: pypi
+    distributions: bdist_wheel
+    on:
+      tags: true
+    user: {{ cookiecutter.shortname }} # pypi user name
+    password:
+      secure: encrypted-password
+{%- endif %}

@@ -1,0 +1,22 @@
+version: {branch}-{build}
+
+cache:
+  - '%LOCALAPPDATA%\pip\Cache'
+
+environment:
+  matrix:
+    fast_finish: true
+{%- for env in ['py35', 'py36', 'py37'] %}{{ '' }}
+    - PYTHON_HOME: C:\Python{{ env[2:4] }}
+      PYTHON_VERSION: {{ env[2] }}.{{ env[3] }}
+      PYTHON_ARCH: 32
+    - PYTHON_HOME: C:\Python{{ env[2:4] }}-x64
+      PYTHON_VERSION: {{ env[2] }}.{{ env[3] }}
+      PYTHON_ARCH: 64
+{%- endfor %}
+
+install:
+  - python -m pip install --upgrade -r requirements-dev.txt
+
+test_script:
+  - python setup.py test

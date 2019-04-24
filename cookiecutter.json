@@ -1,0 +1,27 @@
+{
+    "open_source_license": [
+        "GNU General Public License v3",
+        "GNU Lesser General Public License v3",
+        "MIT license",
+        "BSD license",
+        "Apache Software License 2.0",
+        "Not open source (violating TR1621)"
+    ],
+
+    "shortname": "name",
+    "email": "{{ cookiecutter.shortname }}@equinor.com",
+    "github_username": "Equinor",
+
+    "project_name": "Nameless",
+    "repo_name": "{{ cookiecutter.project_name | lower | replace(' ', '_') }}",
+    "package_name": "{{ cookiecutter.project_name | lower | replace(' ','_') | replace('-','_') }}",
+    "distribution_name": "{{ cookiecutter.package_name | replace('_','-') }}",
+    "short_description": "{{ cookiecutter.project_name }}: package generated with cookiecutter-equinor",
+
+    "pypi": ["yes", "no"],
+
+    "command_line_interface": ["argparse", "click", "None"],
+    "command_line_interface_bin_name": "{{ cookiecutter.distribution_name }}",
+
+    "linter": ["flake8", "None"]
+}

@@ -1,0 +1,11 @@
+setuptools >=28
+setuptools_scm
+pytest
+pytest-runner
+sphinx
+{%- if cookiecutter.command_line_interface == 'click' %}
+click
+{% endif -%}
+{%- if cookiecutter.linter == 'flake8' %}
+flake8
+{% endif -%}
