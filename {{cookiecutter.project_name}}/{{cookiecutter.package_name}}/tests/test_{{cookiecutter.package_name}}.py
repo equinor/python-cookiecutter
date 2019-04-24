@@ -1,6 +1,5 @@
 import pytest
-
-{%- if cookiecutter.command_line_interface != 'None' -%}
+{% if cookiecutter.command_line_interface != 'None' -%}
 from .. import cli
 
 def test_main():
