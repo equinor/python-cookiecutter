@@ -1,0 +1,18 @@
+sudo: false
+language: python
+python:
+  - 3.6
+
+install:
+  - python3 -m pip install --upgrade pip
+  - python3 -m pip install cookiecutter
+
+script:
+  - mkdir ~/cookie
+  - pushd ~/cookie
+  - python3 -m cookiecutter --no-input $TRAVIS_BUILD_DIR
+  - cd Nameless
+  - python3 -m pip install -r requirements-dev.txt
+  - python3 setup.py test
+  - cd docs && make html
+  - popd
