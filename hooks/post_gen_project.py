@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     print('\nNext steps:')
 
-    travis = 'https://travis-ci.com'
+    travis = 'https://travis-ci.org/{}/{}/settings'.format(username, repo)
     print('\tSet up the travis job:')
     print('\t{}\n'.format(travis))
 
