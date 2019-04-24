@@ -2,7 +2,7 @@ language: python
 dist: xenial
 matrix:
   include:
-{%- for env in ['py34', 'py35', 'py36', 'py37'] %}{{ '' }}
+{%- for env in ['py35', 'py36', 'py37'] %}{{ '' }}
     - python: '{{ "{0[2]}.{0[3]}".format(env) }}'
 {%- endfor %}
 
@@ -12,12 +12,12 @@ before_install:
 install:
   - python3 -m pip install --upgrade pip
   - python3 -m pip install --upgrade -r requirements-dev.txt
-{%- if cookiecutter.linter != 'None' %}
-  - python3 -m {{ cookiecutter.linter }} {{ cookiecutter.package_name }}
-{%- endif %}
 
 script:
   - python3 setup.py test
+{%- if cookiecutter.linter != 'None' %}
+  - python3 -m {{ cookiecutter.linter }} {{ cookiecutter.package_name }}
+{%- endif %}
 
 {% if cookiecutter.pypi == 'yes' -%}
 deploy:
