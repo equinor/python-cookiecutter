@@ -9,6 +9,7 @@
     ],
 
     "shortname": "name",
+    "full_name": "{{ cookiecutter.shortname }}",
     "email": "{{ cookiecutter.shortname }}@equinor.com",
     "github_username": "equinor",
 
